@@ -22,6 +22,7 @@ api = Api(app)
 # looks at the elements create in the model classes
 @app.before_first_request
 def create_tables():
+    db.init_app(app)
     db.create_all()
 
 
